@@ -3,7 +3,8 @@ const cors=require('cors')
 //PASO 2: Importar los paquetes que hemos instalado
 const express = require("express");
 // const path = require("path");
-
+// Accessing the path module
+const path = require("path");
 const mongoose = require('mongoose');
 
 const auth = require("./middleware/auth");
@@ -23,7 +24,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 // Middleware Setup
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
@@ -35,10 +36,10 @@ app.post("/welcome", auth, (req, res) => {
    res.status(200).send("Welcome 🙌 ");
  });
 
-//Middleware for build folder
-// app.use((req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+// Middleware for build folder
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 // APP LISTENER
 app.listen(PORT, () => {
