@@ -35,10 +35,6 @@ app.post("/welcome", auth, (req, res) => {
    res.status(200).send("Welcome 🙌 ");
  });
 
-//Middleware for build folder
-// app.use((req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
 
 // APP LISTENER
 app.listen(PORT, () => {
