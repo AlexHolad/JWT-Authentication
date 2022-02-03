@@ -32,7 +32,7 @@ const RegisterScreen = () => {
 
       try {
          const {data} = await axios.post(
-            'api/users/login',
+            'api/users/register',
             {
                username,
                email,
