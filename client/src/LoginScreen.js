@@ -28,7 +28,7 @@ const LoginScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://jwt-node-react.herokuapp.com/",
         { email, password },
         config
       );
