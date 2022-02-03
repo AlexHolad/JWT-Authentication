@@ -32,7 +32,7 @@ const RegisterScreen = () => {
 
       try {
          const {data} = await axios.post(
-            'https://jwt-node-react.herokuapp.com/',
+            'api/users/login',
             {
                username,
                email,
